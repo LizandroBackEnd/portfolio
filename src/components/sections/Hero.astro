@@ -1,0 +1,122 @@
+---
+import { Image } from 'astro:assets'
+import GitHub from '../../icons/GitHub.astro'
+import LinkedIn from '../../icons/LinkIn.astro'
+import Email from '../../icons/Email.astro'
+import SocialPill from '../ui/SocialPill.astro'
+import Download from '../../icons/Donwload.astro'
+import Badge from '../ui/Badge.astro'
+import { Icon } from 'astro-icon/components'
+---
+
+<div class="relative">
+  <!-- Hero principal -->
+  <section class="flex flex-col md:flex-row items-center gap-12 md:gap-16 pt-5 md:pt-10">
+    <!-- Columna izquierda: Contenido -->
+    <div class="flex-1 space-y-8 animate-fade-in-up">
+      <!-- Badge de disponibilidad -->
+      <div class="flex items-center gap-4 animate-fade-in" style="animation-delay: 0.1s;">
+        <Badge>Disponible para trabajar</Badge>
+      </div>
+
+      <!-- Saludo y nombre -->
+      <div class="space-y-4">
+        <p class="text-blue text-base md:text-xl font-mono opacity-90 animate-fade-in" style="animation-delay: 0.2s;">
+          Hola, mi nombre es
+        </p>
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.1] animate-fade-in-up" style="animation-delay: 0.3s;">
+          <span class="text-white">Lizandro Antonio </span>
+          <span class="bg-gradient-to-r from-blue to-green bg-clip-text text-transparent">
+            Santos
+          </span>
+        </h1>
+      </div>
+
+      <!-- Título profesional -->
+      <div class="space-y-3 animate-fade-in-up" style="animation-delay: 0.4s;">
+        <h2 class="text-2xl md:text-4xl font-bold text-gray-300">
+          Desarrollador Frontend
+        </h2>
+        <p class="text-lg md:text-xl text-gray-300 leading-[1.8] max-w-2xl">
+          Especializado en <strong class="text-blue font-semibold">React</strong> con enfoque en <strong class="text-violet font-semibold">Clean Architecture</strong> y buenas prácticas. 
+          Cuento con experiencia en Backend con <strong class="text-green font-semibold">NestJS/Express</strong> para APIs escalables.
+        </p>
+      </div>
+
+      <!-- Información adicional -->
+      <div class="flex flex-wrap items-center gap-6 text-gray-300 animate-fade-in" style="animation-delay: 0.5s;">
+        <div class="flex items-center gap-2">
+          <Icon name="mdi:map-marker" width={18} height={18} class="text-blue" />
+          <span>Toluca, México</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <Icon name="mdi:school" width={18} height={18} class="text-green" />
+          <span>Ing. Sistemas Computacionales</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <Icon name="mdi:briefcase" width={18} height={18} class="text-violet" />
+          <span>+3 años de experiencia</span>
+        </div>
+      </div>
+
+      <!-- Redes sociales -->
+      <div class="flex flex-wrap gap-2 md:gap-4 pt-4 animate-fade-in" style="animation-delay: 0.6s;">
+        <SocialPill href="https://github.com/angelcruz07">
+          <GitHub />
+          GitHub
+        </SocialPill>
+        <SocialPill href="https://www.linkedin.com/in/angelcruzsanchez">
+          <LinkedIn />
+          LinkedIn
+        </SocialPill>
+        <SocialPill href="mailto:angelcruzsanchez126@gmail.com">
+          <Email />
+          Contactar
+        </SocialPill>
+        <SocialPill href="https://drive.google.com/file/d/1pRfPQxEf3CNWgmEw991yAmlNwYsbyJmr/view?usp=sharing">
+          <Download />
+          Descargar CV
+        </SocialPill>
+      </div>
+    </div>
+
+    <!-- Columna derecha: Imagen de perfil -->
+    <div class="flex-shrink-0 animate-fade-in" style="animation-delay: 0.4s;">
+      <div class="relative group">
+        <!-- Efecto de brillo animado -->
+        <div class="absolute -inset-4 bg-gradient-to-r from-blue/20 via-violet/20 to-green/20 rounded-full blur-2xl group-hover:blur-3xl transition-all duration-700 animate-pulse"></div>
+        
+        <!-- Imagen con borde animado -->
+        <div class="relative">
+          <Image
+            src="/yo.jpg"
+            alt="Lizandro Antonio Santos, desarrollador web"
+            height={200}
+            width={200}
+            class="relative w-[200px] h-[200px] rounded-full border-2 border-dark-border/50 shadow-2xl shadow-black/50 group-hover:border-blue/50 transition-all duration-500 group-hover:scale-105 object-cover aspect-square"
+          />
+          <!-- Indicador de estado -->
+          <div class="absolute bottom-0 right-8 w-6 h-6 bg-green rounded-full border-4 border-dark-bg shadow-lg animate-pulse">
+            <div class="w-full h-full bg-green rounded-full animate-ping opacity-75"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cita inspiracional -->
+  <div class="relative animate-fade-in mt-5 md:mt-10" style="animation-delay: 0.7s;">
+    <div class="relative p-8 md:p-10 rounded-3xl bg-gradient-to-br from-dark-surface/60 via-dark-surface/40 to-dark-surface/60 border border-dark-border/50 backdrop-blur-xl overflow-hidden">
+      <!-- Efecto de fondo -->
+      <div class="absolute inset-0 bg-gradient-to-r from-blue/5 via-transparent to-violet/5"></div>
+      
+      <div class="relative z-10 text-center">
+        <Icon name="mdi:format-quote-open" width={40} height={40} class="mx-auto mb-4 text-blue/30" />
+        <p class="text-xl md:text-2xl font-medium text-gray-200 italic mb-3 max-w-3xl mx-auto leading-[1.7]">
+          "A clean programmer is the best kind of programmer"
+        </p>
+        <p class="text-sm text-gray-500">— Alan Buscaglia</p>
+      </div>
+    </div>
+  </div>
+</div>

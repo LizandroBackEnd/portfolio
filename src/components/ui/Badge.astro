@@ -1,0 +1,14 @@
+<div class="flex items-center">
+  <span class="relative inline-flex overflow-hidden rounded-full p-[1.5px]">
+    <span
+      class="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,rgba(182,209,97,0.8)_0%,rgba(44,203,243,0.4)_50%,rgba(182,209,97,0.8)_100%)]"
+    ></span>
+    <div
+      class="inline-flex items-center justify-center w-full px-4 py-1.5 text-sm font-medium text-green bg-dark-surface/90 backdrop-blur-sm rounded-full whitespace-nowrap border border-green/20">
+      <span class="relative flex items-center gap-2">
+        <span class="w-2 h-2 bg-green rounded-full animate-pulse"></span>
+        <slot />
+      </span>
+    </div>
+  </span>
+</div>

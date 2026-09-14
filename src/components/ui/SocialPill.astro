@@ -1,0 +1,22 @@
+<a
+  target="_blank"
+  {...Astro.props}
+  class="inline-flex items-center justify-center gap-1.5 md:gap-2 px-3 py-2 md:px-5 md:py-2.5 text-sm md:text-base
+  text-gray-300 transition-all duration-300 bg-dark-surface/60 backdrop-blur-sm
+  border border-dark-border/50 rounded-full
+  hover:bg-dark-surface hover:border-dark-border
+  hover:text-white hover:shadow-lg hover:shadow-black/20
+  group max-w-fit w-full sm:w-auto
+  focus:outline-none focus-visible:outline-none
+  focus-visible:ring-2 focus-visible:ring-blue/50 focus-visible:ring-offset-2 focus-visible:ring-offset-dark-bg
+  active:scale-95 cursor-pointer
+  relative overflow-hidden">
+  <!-- Animación de borde brillante -->
+  <span class="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+    <span class="absolute inset-0 rounded-full bg-gradient-to-r from-blue/20 via-violet/20 to-green/20 blur-sm animate-pulse"></span>
+    <span class="absolute inset-[1px] rounded-full bg-gradient-to-r from-blue/30 via-violet/30 to-green/30 animate-[spin_3s_linear_infinite]"></span>
+  </span>
+  <!-- Fondo con gradiente al hover -->
+  <span class="absolute inset-0 bg-gradient-to-r from-blue/10 via-violet/10 to-green/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full"></span>
+  <span class="relative z-10 flex items-center gap-1.5 md:gap-2"><slot /></span>
+</a>

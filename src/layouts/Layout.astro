@@ -1,23 +1,120 @@
+---
+import Header from '../components/navigation/Navbar.astro'
+
+// Supports weights 100-900
+import '@fontsource-variable/onest'
+import '@fontsource/geist-sans'
+
+interface Props {
+  title: string
+  description: string
+}
+
+const { title, description } = Astro.props
+---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/img/favicon.svg " />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="relative text-white antialiased">
+    <!-- Fondo con gradientes sutiles -->
+    <div class="fixed inset-0 z-[-1] bg-gradient-to-br from-[#0a0a0f] via-[#0f0f1a] to-[#050508]"></div>
+    
+    <!-- Efectos de luz sutiles -->
+    <div class="fixed inset-0 z-[-1] opacity-30">
+      <div class="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+      <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-violet-500/10 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+    </div>
+    
+    <!-- Grid pattern sutil -->
+    <div class="fixed inset-0 z-[-1] opacity-[0.03]" style="background-image: linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px); background-size: 50px 50px;"></div>
+    
+    <Header />
+    <slot />
+  </body>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+  <style is:global>
+    @font-face {
+      font-family: 'Geist Sans';
+    }
+
+    :root {
+      color-scheme: dark;
+    }
+
+    html {
+      font-family: 'Geist Sans', system-ui, sans-serif;
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    /* Mejoras de legibilidad globales */
+    p {
+      text-rendering: optimizeLegibility;
+      letter-spacing: 0.01em;
+    }
+    
+    /* Ancho óptimo para lectura (65-75 caracteres) */
+    article p, .max-w-2xl p, .max-w-3xl p {
+      max-width: 65ch;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+      
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    body {
+      display: flex;
+      color: #f8fafc;
+      background-color: #0a0a0f;
+      flex-direction: column;
+      min-height: 100vh;
+      overscroll-behavior: none;
+    }
+
+    /* Animaciones sutiles */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .animate-fade-in-up {
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+
+    .animate-fade-in {
+      animation: fadeIn 0.8s ease-out forwards;
+    }
+  </style>
+</html>

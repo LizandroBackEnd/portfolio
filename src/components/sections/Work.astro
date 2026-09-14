@@ -1,0 +1,139 @@
+---
+import { Image } from 'astro:assets'
+import NextIcon from '../../icons/Next.astro'
+import AstroIcon from '../../icons/Astro.astro'
+import TailwindIcon from '../../icons/Tailwind.astro'
+import Mysql from '../../icons/Mysql.astro'
+import Eye from '../../icons/Eye.astro'
+import Postgresql from '../../icons/Postgresql.astro'
+
+const TAGS = {
+  NEXT: {
+    name: 'Next.js',
+    class: 'bg-black text-white',
+    icon: NextIcon
+  },
+  TAILWIND: {
+    name: 'Tailwind CSS',
+    class: 'bg-[#003159] text-white',
+    icon: TailwindIcon
+  },
+  ASTRO: {
+    name: 'Astro',
+    class: 'bg-black text-white',
+    icon: AstroIcon
+  },
+  MYSQL: {
+    name: 'Mysql',
+    class: 'bg-white text-black',
+    icon: Mysql
+  },
+  POSTGRESQL: {
+    name: 'Postgresql',
+    class: 'bg-white text-black',
+    icon: Postgresql
+  }
+}
+
+const PROJECTS = [
+{
+    title: 'Mind Your English',
+    description:
+      'Sitio web institucional para esta academia de idiomas. Desarrollado para fortalecer su identidad digital y optimizar la captación de nuevos alumnos mediante una estructura clara de servicios y contacto directo.',
+    link: 'https://mindyourenglish.academy', 
+    github: '',
+    image: '/img/works/mindyourenglish.png', // Asegúrate de tener esta imagen
+    tags: [TAGS.ASTRO, TAGS.TAILWIND] // Ajusta los tags si usaste otras tecnologías
+  },
+  {
+    title: 'Axolmen E-commerce',
+    description:
+      'Plataforma de comercio electrónico completa desarrollada a medida. Incluye un panel de administración personalizado para la gestión de inventario y pedidos en tiempo real, optimizada para SEO y conversión.',
+    link: 'https://axolmen.com', // Corregí .con a .com (verifica si es correcto)
+    github: '',
+    image: '/img/works/axolmen.png',
+    tags: [TAGS.NEXT, TAGS.TAILWIND]
+  },
+  {
+    title: 'Code Verse',
+    description:
+      'Sitio web corporativo de alto rendimiento para la startup tecnológica Code Verse. Diseñado con un enfoque en UX moderno y optimización de SEO para fortalecer la presencia digital de la marca.',
+    link: 'https://codeverseinc.vercel.app',
+    github: '',
+    image: '/img/works/codeverse.png',
+    tags: [TAGS.NEXT, TAGS.TAILWIND]
+  },
+  {
+    title: 'Sultepec Turístico',
+    description:
+      'Portal digital oficial para el fomento del turismo del municipio de Sultepec. Centraliza información cultural y de servicios en una interfaz accesible. Proyecto destacado de mi formación técnica.',
+    link: 'https://sultepecturistico.vercel.app/',
+    github: '',
+    image: '/img/works/sultepec.png',
+    tags: [TAGS.NEXT, TAGS.MYSQL]
+  },
+]
+---
+
+{
+  PROJECTS.map(({ title, description, tags, image, link }, index) => {
+    const delay = index * 0.1;
+    return (
+    <article class="group animate-fade-in-up" style={`animation-delay: ${delay}s; opacity: 0;`}>
+      <div class="md:w-96">
+        <!-- Card container -->
+        <div class="relative bg-dark-surface/40 backdrop-blur-sm border border-dark-border/50 rounded-2xl p-6 
+                    hover:bg-dark-surface/60 hover:border-dark-border 
+                    transition-all duration-500 ease-out
+                    hover:shadow-2xl hover:shadow-black/40
+                    overflow-hidden">
+          <!-- Efecto de brillo al hover -->
+          <div class="absolute inset-0 bg-gradient-to-br from-blue/5 via-transparent to-violet/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          
+          <div class="relative z-10">
+            <!-- Título -->
+            <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-blue transition-colors duration-300">
+              {title}
+            </h3>
+            
+            <!-- Descripción -->
+            <p class="text-base md:text-lg text-gray-300 mb-5 leading-[1.7]">{description}</p>
+
+            <!-- Tags y botón -->
+            <div class="flex flex-wrap gap-2 items-center mb-6">
+              {tags.map((tag) => (
+                <span
+                  class={`flex items-center gap-x-1.5 rounded-full py-1.5 px-3 text-xs ${tag.class} font-medium backdrop-blur-sm border border-white/10`}>
+                  <tag.icon class="size-3" />
+                  {tag.name}
+                </span>
+              ))}
+              <a
+                class="rounded-full flex justify-center items-center gap-1.5 bg-white/5 hover:bg-white/10 border border-dark-border/50 cursor-pointer text-xs py-1.5 px-3 text-gray-300 hover:text-white transition-all duration-300 hover:border-blue/50 hover:scale-105"
+                href={link}
+                target="_blank">
+                <Eye class="size-3" /> Demo
+              </a>
+            </div>
+
+            <!-- Imagen -->
+            <div class="overflow-hidden rounded-xl border border-dark-border/30">
+              <a href={link} target="_blank" class="block">
+                <Image
+                  src={image}
+                  width={420}
+                  height={240}
+                  class="w-full aspect-video object-cover transition-all duration-700 ease-out group-hover:scale-110 group-hover:brightness-110 cursor-pointer"
+                  alt={`Captura de pantalla del proyecto ${title}`}
+                />
+                <!-- Overlay sutil -->
+                <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+    );
+  })
+}

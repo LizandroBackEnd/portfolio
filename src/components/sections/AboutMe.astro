@@ -1,0 +1,32 @@
+---
+import { Image } from 'astro:assets'
+---
+
+<article
+  class="flex flex-col items-center justify-between gap-12 text-gray-300 md:flex-row mt-8 animate-fade-in-up">
+  <div
+    class="[&>p]:mb-8 text-lg md:text-xl text-pretty text-gray-300 leading-[1.75] max-w-2xl">
+    <p class="mb-6">
+      Hola, soy <span class="text-white font-semibold">Lizandro Antonio Santos</span>, un desarrollador apasionado que escribió sus primeras líneas de código a los <span class="text-blue font-semibold">13 años</span>.
+      Me considero un <span class="text-violet font-semibold">eterno autodidacta</span> y alguien que disfruta genuinamente conectando con las personas;
+      ya sea resolviendo un bug complejo o compartiendo puntos de vista.
+    </p>
+    <p>
+      Cuando no estoy frente a la pantalla, me encontrarás en movimiento: el <span class="text-green font-semibold">gym</span>
+      y la <span class="text-green font-semibold">danza folclórica</span> son mi forma de liberar energía,
+      aunque también tengo un lado artístico que cultivo tocando la <span class="text-violet font-semibold">guitarra</span>.
+      Busco disfrutar cada faceta de mi vida al máximo, aplicando la misma dedicación a mis proyectos de software que a mis pasiones personales.
+    </p>
+  </div>
+  <div class="order-1 md:order-2 relative group">
+    <div class="absolute inset-0 bg-gradient-to-br from-blue/20 to-violet/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+    <Image
+      src="/yo.jpg"
+      alt="Lizandro Antonio Santos"
+      width={800}
+      height={800}
+      class="relative object-cover w-[400px] md:w-[650px] lg:w-[750px] aspect-square rounded-2xl border-2 border-dark-border/50 group-hover:border-blue/50 transition-all duration-500 group-hover:scale-105 group-hover:rotate-1 shadow-2xl shadow-black/40"
+      style="object-position: 50% 50%"
+    />
+  </div>
+</article>

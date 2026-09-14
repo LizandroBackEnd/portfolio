@@ -1,0 +1,53 @@
+---
+import ExperienceItem from '../ui/ExperienceItem.astro'
+
+const EXPERIENCE = [
+  {
+    id: 1,
+    date: 'Ene 2025 - Presente',
+    title: 'Software Developer - Xalachi',
+    description:
+      'Diseño y desarrollo de una API REST para facturación electrónica (Costa Rica) utilizando NestJS y Clean Architecture, logrando reducir en un 50% el tiempo de integración en nuevos productos. Además, optimicé el despliegue de servicios mediante la configuración de servidores Nginx y contenedores Docker.',
+    link: 'https://xalachi.com/' 
+  },
+  {
+    id: 2,
+    date: '2024 - 2025',
+    title: 'Software Developer - Ideal Team PE',
+    description:
+      'Lideré la migración de sistemas legacy (PHP/jQuery) hacia un stack moderno con React y Node.js, mejorando el rendimiento y la mantenibilidad. Garanticé la continuidad operativa mediante mantenimiento correctivo y evolutivo de aplicaciones en producción.',
+    link: 'https://idealteampe.com/'
+  },
+  {
+    id: 3,
+    date: 'Sep 2024 - Presente',
+    title: 'Ingeniería en Sistemas Computacionales',
+    description:
+      'Cursando el segundo año. He decidido formalizar mi trayectoria autodidacta para profundizar en la teoría detrás del código (algoritmos y estructuras de datos), con el objetivo de elevar la calidad y escalabilidad de las arquitecturas que diseño profesionalmente.',
+    link: 'https://www.universidadiuem.edu.mx/'
+  },
+  {
+    id: 4,
+    date: '2021 - 2024',
+    title: 'Técnico en Programación',
+    description:
+      'Graduado con formación intensiva en lógica de programación. Durante mi formación, colaboré en el desarrollo del sitio web oficial de turismo del municipio y participé en la creación de sistemas de gestión internos para la institución.',
+    link: 'https://sultepecturistico.vercel.app/'
+  }
+]
+---
+
+<ol class="ml-4 relative border-l-2 border-dark-border/50">
+  {
+    EXPERIENCE.map((experience, index) => {
+      const delay = index * 0.15;
+      return (
+      <li class="animate-fade-in-up" style={`animation-delay: ${delay}s; opacity: 0;`}>
+        <ExperienceItem 
+          {...experience}
+        />
+      </li>
+      );
+    })
+  }
+</ol>

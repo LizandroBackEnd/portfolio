@@ -1,0 +1,61 @@
+---
+import Eye from '../../icons/Eye.astro'
+const { title, description, date, link, id } = Astro.props
+---
+
+<div class="mb-12 ms-8 group">
+  <!-- Timeline dot -->
+  <span
+    class="absolute flex items-center justify-center w-4 h-4 rounded-full -start-2
+           bg-gradient-to-br from-blue to-violet
+           ring-4 ring-dark-bg
+           group-hover:scale-125 transition-transform duration-300">
+    <span class="w-2 h-2 bg-white rounded-full"></span>
+  </span>
+  
+  <!-- Content card -->
+  <div class="bg-dark-surface/40 backdrop-blur-sm border border-dark-border/50 rounded-xl p-6
+              hover:bg-dark-surface/60 hover:border-dark-border
+              transition-all duration-500 ease-out
+              hover:shadow-xl hover:shadow-black/30
+              relative overflow-hidden">
+    <!-- Efecto de brillo al hover -->
+    <div class="absolute inset-0 bg-gradient-to-r from-blue/5 via-transparent to-violet/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+    
+    <div class="relative z-10">
+      <!-- Título -->
+      <h3 class="flex items-center mb-2 text-xl font-bold text-white group-hover:text-blue transition-colors duration-300">
+        {title}
+      </h3>
+      
+      <!-- Fecha -->
+      <time class="block mb-4 text-sm md:text-base font-medium text-blue">
+        {date}
+      </time>
+      
+      <!-- Descripción -->
+      <p class="mb-5 text-base md:text-lg text-gray-300 leading-[1.7]">
+        {description}
+      </p>
+      
+      <!-- Botón de acción -->
+      {
+        link && (
+          <a
+            href={link}
+            target="_blank"
+            class="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium
+                   bg-white/5 hover:bg-white/10 border border-dark-border/50
+                   text-gray-300 hover:text-white
+                   rounded-lg
+                   transition-all duration-300
+                   hover:border-blue/50 hover:scale-105
+                   focus:outline-none focus-visible:ring-2 focus-visible:ring-blue/50 focus-visible:ring-offset-2 focus-visible:ring-offset-dark-bg">
+            <span><Eye class="size-4" /></span>
+            Ver empresa
+          </a>
+        )
+      }
+    </div>
+  </div>
+</div>
