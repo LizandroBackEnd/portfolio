@@ -1,6 +1,4 @@
 import { defineConfig } from 'astro/config'
-import vercel from '@astrojs/vercel'
-
 import tailwind from '@astrojs/tailwind'
 
 import icon from 'astro-icon';
@@ -14,10 +12,6 @@ export default defineConfig({
       'simple-icons': ['*'],
     },
   })],
-  site: 'https://angelcruzsanchez.com',
   base: '/',
-  output: 'server',
-  adapter: vercel({
-    webAnalytics: { enabled: true }
-  })
+  output: 'static'
 })
