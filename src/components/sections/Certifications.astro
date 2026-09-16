@@ -1,0 +1,58 @@
+---
+import { Icon } from 'astro-icon/components'
+import Title from '../ui/Title .astro'
+
+const CERTIFICATIONS = [
+  {
+    title: 'Certificaciones cloud',
+    description: 'Espacio para agregar certificaciones relacionadas con Azure, infraestructura y servicios en la nube.',
+    icon: 'mdi:cloud-outline',
+    color: 'text-blue'
+  },
+  {
+    title: 'Desarrollo de software',
+    description: 'Espacio para agregar certificaciones de backend, arquitectura limpia y buenas prácticas.',
+    icon: 'mdi:certificate-outline',
+    color: 'text-violet'
+  },
+  {
+    title: 'Metodologías y herramientas',
+    description: 'Espacio para agregar certificaciones de Scrum, Docker, bases de datos y otras herramientas.',
+    icon: 'mdi:badge-account-outline',
+    color: 'text-green'
+  }
+]
+---
+
+<section id="certificaciones">
+  <Title color="text-blue" class="text-2xl md:text-3xl lg:text-4xl">
+    <Icon name="mdi:certificate-outline" width={28} height={28} />
+    Certificaciones
+  </Title>
+
+  <div class="mt-12 grid gap-6 md:grid-cols-3">
+    {
+      CERTIFICATIONS.map((certification, index) => (
+        <article
+          class="group animate-fade-in-up rounded-2xl border border-dark-border/50 bg-dark-surface/40 p-6 backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 hover:border-dark-border hover:bg-dark-surface/60 hover:shadow-xl hover:shadow-black/30"
+          style={`animation-delay: ${index * 0.12}s;`}>
+          <div class="mb-8 flex items-start justify-between gap-4">
+            <div class={`flex size-12 items-center justify-center rounded-xl bg-white/5 ${certification.color}`}>
+              <Icon name={certification.icon} width={27} height={27} />
+            </div>
+            <span class="rounded-full border border-dark-border/60 bg-white/5 px-3 py-1 text-xs font-medium text-gray-400">
+              Próximamente
+            </span>
+          </div>
+
+          <h3 class="mb-3 text-xl font-bold text-white transition-colors duration-300 group-hover:text-blue">
+            {certification.title}
+          </h3>
+          <p class="text-base leading-7 text-gray-400">
+            {certification.description}
+          </p>
+        </article>
+      ))
+    }
+  </div>
+</section>

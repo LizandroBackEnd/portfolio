@@ -11,6 +11,7 @@ import AboutMe from '../components/sections/AboutMe.astro'
 import Hero from '../components/sections/Hero.astro'
 import Projects from '../components/sections/Projects.astro'
 import Title from '../components/ui/Title .astro'
+// import Certifications from '../components/sections/Certifications.astro'
 ---
 
 <Layout
@@ -22,13 +23,16 @@ import Title from '../components/ui/Title .astro'
       <Hero />
     </SectionContainer>
 
+    <!-- Certificaciones Section - pendiente de activar -->
+    <!--
+    <SectionContainer class="mt-24 mb-24">
+      <Certifications />
+    </SectionContainer>
+    -->
+
     <!-- Experiencia Section -->
     <SectionContainer id="experiencia" class="mt-40 mb-24">
-      <Title color="text-violet">
-        <Brifcase class="size-6 md:size-7" />
-        Experiencia profesional
-      </Title>
-        <WorkExperience />
+      <WorkExperience />
     </SectionContainer>
 
     <!-- Proyectos Section -->

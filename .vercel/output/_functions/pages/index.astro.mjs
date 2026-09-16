@@ -50,100 +50,131 @@ const $$Astro$b = createAstro("https://angelcruzsanchez.com");
 const $$ExperienceItem = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$b, $$props, $$slots);
   Astro2.self = $$ExperienceItem;
-  const { title, description, date, link, id } = Astro2.props;
-  return renderTemplate`${maybeRenderHead()}<div class="mb-12 ms-8 group"> <!-- Timeline dot --> <span class="absolute flex items-center justify-center w-4 h-4 rounded-full -start-2
-           bg-gradient-to-br from-blue to-violet
-           ring-4 ring-dark-bg
-           group-hover:scale-125 transition-transform duration-300"> <span class="w-2 h-2 bg-white rounded-full"></span> </span> <!-- Content card --> <div class="bg-dark-surface/40 backdrop-blur-sm border border-dark-border/50 rounded-xl p-6
+  const { title, description, date, link, linkLabel = "Ver empresa", showDot = true } = Astro2.props;
+  return renderTemplate`${maybeRenderHead()}<div class="mb-12 ms-8 group"> <!-- Timeline dot --> ${showDot && renderTemplate`<span class="absolute flex items-center justify-center w-4 h-4 rounded-full -start-2
+               bg-gradient-to-br from-blue to-violet
+               ring-4 ring-dark-bg
+               group-hover:scale-125 transition-transform duration-300"> <span class="w-2 h-2 bg-white rounded-full"></span> </span>`} <!-- Content card --> <div class="flex flex-col bg-dark-surface/40 backdrop-blur-sm border border-dark-border/50 rounded-xl p-6
               hover:bg-dark-surface/60 hover:border-dark-border
               transition-all duration-500 ease-out
               hover:shadow-xl hover:shadow-black/30
-              relative overflow-hidden"> <!-- Efecto de brillo al hover --> <div class="absolute inset-0 bg-gradient-to-r from-blue/5 via-transparent to-violet/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div> <div class="relative z-10"> <!-- Título --> <h3 class="flex items-center mb-2 text-xl font-bold text-white group-hover:text-blue transition-colors duration-300"> ${title} </h3> <!-- Fecha --> <time class="block mb-4 text-sm md:text-base font-medium text-blue"> ${date} </time> <!-- Descripción --> <p class="mb-5 text-base md:text-lg text-gray-300 leading-[1.7]"> ${description} </p> <!-- Botón de acción --> ${link && renderTemplate`<a${addAttribute(link, "href")} target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium
+              relative overflow-hidden"> <!-- Efecto de brillo al hover --> <div class="absolute inset-0 bg-gradient-to-r from-blue/5 via-transparent to-violet/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div> <div class="relative z-10 flex flex-col"> <!-- Título --> <h3 class="flex items-center mb-2 text-xl font-bold text-white group-hover:text-blue transition-colors duration-300"> ${title} </h3> <!-- Fecha --> <time class="block mb-4 text-sm md:text-base font-medium text-blue"> ${date} </time> <!-- Descripción --> <p class="mb-5 text-base md:text-lg text-gray-300 leading-[1.7]"> ${description} </p> <!-- Botón de acción --> ${link && renderTemplate`<a${addAttribute(link, "href")} target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium
                    bg-white/5 hover:bg-white/10 border border-dark-border/50
                    text-gray-300 hover:text-white
                    rounded-lg
                    transition-all duration-300
                    hover:border-blue/50 hover:scale-105
-                   focus:outline-none focus-visible:ring-2 focus-visible:ring-blue/50 focus-visible:ring-offset-2 focus-visible:ring-offset-dark-bg"> <span>${renderComponent($$result, "Eye", $$Eye, { "class": "size-4" })}</span>
-Ver empresa
-</a>`} </div> </div> </div>`;
+                   focus:outline-none focus-visible:ring-2 focus-visible:ring-blue/50 focus-visible:ring-offset-2 focus-visible:ring-offset-dark-bg"> <span>${renderComponent($$result, "Eye", $$Eye, { "class": "size-4" })}</span> ${linkLabel} </a>`} </div> </div> </div>`;
 }, "/home/lizdev/Escritorio/projects/portfolio/src/components/ui/ExperienceItem.astro", void 0);
 
+const $$Astro$a = createAstro("https://angelcruzsanchez.com");
+const $$Brifcase = createComponent(($$result, $$props, $$slots) => {
+  const Astro2 = $$result.createAstro($$Astro$a, $$props, $$slots);
+  Astro2.self = $$Brifcase;
+  return renderTemplate`${maybeRenderHead()}<svg${spreadAttributes(Astro2.props.class)} xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-briefcase" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M3 7m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z"></path><path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2"></path><path d="M12 12l0 .01"></path><path d="M3 13a20 20 0 0 0 18 0"></path></svg>`;
+}, "/home/lizdev/Escritorio/projects/portfolio/src/icons/Brifcase.astro", void 0);
+
+const $$Astro$9 = createAstro("https://angelcruzsanchez.com");
+const $$Profile = createComponent(($$result, $$props, $$slots) => {
+  const Astro2 = $$result.createAstro($$Astro$9, $$props, $$slots);
+  Astro2.self = $$Profile;
+  return renderTemplate`${maybeRenderHead()}<svg${spreadAttributes(Astro2.props)} xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path><path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path></svg>`;
+}, "/home/lizdev/Escritorio/projects/portfolio/src/icons/Profile.astro", void 0);
+
+const $$Astro$8 = createAstro("https://angelcruzsanchez.com");
+const $$Title = createComponent(($$result, $$props, $$slots) => {
+  const Astro2 = $$result.createAstro($$Astro$8, $$props, $$slots);
+  Astro2.self = $$Title;
+  const { color, class: className = "" } = Astro2.props;
+  return renderTemplate`${maybeRenderHead()}<h2${addAttribute(`${color} ${className} text-3xl md:text-4xl lg:text-5xl font-bold md:mb-8 mt-8 first:mt-0 flex flex-col md:flex-row gap-4 md:gap-6 items-start md:items-center group`, "class")}> <span class="flex min-w-0 items-center gap-3"> ${renderSlot($$result, $$slots["default"])} </span> <div class="flex-1 w-full md:w-auto h-px bg-gradient-to-r from-dark-border via-dark-border/50 to-transparent mt-2 md:mt-0 md:ml-6"></div> </h2>`;
+}, "/home/lizdev/Escritorio/projects/portfolio/src/components/ui/Title .astro", void 0);
+
 const $$WorkExperience = createComponent(($$result, $$props, $$slots) => {
-  const EXPERIENCE = [
+  const WORK_EXPERIENCE = [
     {
       id: 1,
-      date: "Ene 2025 - Presente",
-      title: "Software Developer - Xalachi",
-      description: "Dise\xF1o y desarrollo de una API REST para facturaci\xF3n electr\xF3nica (Costa Rica) utilizando NestJS y Clean Architecture, logrando reducir en un 50% el tiempo de integraci\xF3n en nuevos productos. Adem\xE1s, optimic\xE9 el despliegue de servicios mediante la configuraci\xF3n de servidores Nginx y contenedores Docker.",
-      link: "https://xalachi.com/"
+      date: "Actualidad",
+      title: "Backend & Cloud Engineer - The Cloud Mastery",
+      description: "Desarrollo de infraestructura y servicios utilizando Next.js, TypeScript, Docker, PostgreSQL y servicios en la nube de Azure. Implementaci\xF3n de infraestructura con ARM Templates y creaci\xF3n de una soluci\xF3n para obtener, analizar y predecir los costos de un tenant de Azure.",
+      link: "https://www.thecloudmastery.com/"
     },
     {
       id: 2,
-      date: "2024 - 2025",
-      title: "Software Developer - Ideal Team PE",
-      description: "Lider\xE9 la migraci\xF3n de sistemas legacy (PHP/jQuery) hacia un stack moderno con React y Node.js, mejorando el rendimiento y la mantenibilidad. Garantic\xE9 la continuidad operativa mediante mantenimiento correctivo y evolutivo de aplicaciones en producci\xF3n.",
-      link: "https://idealteampe.com/"
+      date: "Actualidad",
+      title: "Founder & Lead Tech - Codeverse",
+      description: "Co-fund\xE9 Codeverse junto a Angel Alejandro, una consultora de desarrollo de software enfocada en construir soluciones digitales y acompa\xF1ar a organizaciones en sus procesos tecnol\xF3gicos.",
+      link: "https://www.codeverse.com.mx/"
     },
     {
       id: 3,
-      date: "Sep 2024 - Presente",
-      title: "Ingenier\xEDa en Sistemas Computacionales",
-      description: "Cursando el segundo a\xF1o. He decidido formalizar mi trayectoria autodidacta para profundizar en la teor\xEDa detr\xE1s del c\xF3digo (algoritmos y estructuras de datos), con el objetivo de elevar la calidad y escalabilidad de las arquitecturas que dise\xF1o profesionalmente.",
-      link: "https://www.universidadiuem.edu.mx/"
-    },
-    {
-      id: 4,
-      date: "2021 - 2024",
-      title: "T\xE9cnico en Programaci\xF3n",
-      description: "Graduado con formaci\xF3n intensiva en l\xF3gica de programaci\xF3n. Durante mi formaci\xF3n, colabor\xE9 en el desarrollo del sitio web oficial de turismo del municipio y particip\xE9 en la creaci\xF3n de sistemas de gesti\xF3n internos para la instituci\xF3n.",
-      link: "https://sultepecturistico.vercel.app/"
+      date: "Experiencia previa",
+      title: "Software Developer - Xalachi",
+      description: "Dise\xF1o y desarrollo de una API REST para facturaci\xF3n electr\xF3nica utilizando NestJS y Clean Architecture, logrando reducir en un 50% el tiempo de integraci\xF3n en nuevos productos. Integraci\xF3n segura entre un sistema moderno en NestJS y otro en PHP nativo mediante una red interna de Docker. Desarrollo de un middleware de timbrado de notas de cr\xE9dito para asegurar la estabilidad y el flujo transaccional.",
+      link: "https://xalachi.com/"
     }
   ];
-  return renderTemplate`${maybeRenderHead()}<ol class="ml-4 relative border-l-2 border-dark-border/50"> ${EXPERIENCE.map((experience, index) => {
-    const delay = index * 0.15;
-    return renderTemplate`<li class="animate-fade-in-up"${addAttribute(`animation-delay: ${delay}s; opacity: 0;`, "style")}> ${renderComponent($$result, "ExperienceItem", $$ExperienceItem, { ...experience })} </li>`;
-  })} </ol>`;
+  const STUDIES = [
+    {
+      id: 1,
+      date: "Actualmente",
+      title: "Ingenier\xEDa de Software Multiplataforma",
+      description: "Durante la carrera he aprendido y aplicado metodolog\xEDas \xE1giles como Scrum y Design Thinking, adem\xE1s de trabajar con Kotlin para desarrollo m\xF3vil, fundamentos de redes y programaci\xF3n aplicada a la inteligencia artificial. Tambi\xE9n he participado en proyectos reales, fortaleciendo mi capacidad para dise\xF1ar y construir soluciones de software.",
+      link: null
+    },
+    {
+      id: 2,
+      date: "Formaci\xF3n t\xE9cnica",
+      title: "T\xE9cnico en Programaci\xF3n",
+      description: "Particip\xE9 en proyectos internos para la escuela y desarroll\xE9 junto con un compa\xF1ero la web Sultepec Tur\xEDstico. Aprend\xED fundamentos de programaci\xF3n y POO, adem\xE1s de React Native para aplicaciones m\xF3viles y PHP, MySQL, HTML, CSS, Next.js y Tailwind para desarrollo web.",
+      link: "https://sultepecturistico.vercel.app/",
+      linkLabel: "Ver proyecto"
+    }
+  ];
+  return renderTemplate`${maybeRenderHead()}<div class="space-y-24" data-astro-cid-7zr3ndxo> <section data-astro-cid-7zr3ndxo> ${renderComponent($$result, "Title", $$Title, { "color": "text-violet", "class": "text-2xl md:text-3xl lg:text-4xl", "data-astro-cid-7zr3ndxo": true }, { "default": ($$result2) => renderTemplate` ${renderComponent($$result2, "Brifcase", $$Brifcase, { "class": "size-6 md:size-7", "data-astro-cid-7zr3ndxo": true })}
+Experiencia profesional
+` })} <div class="timeline mt-12" data-timeline data-astro-cid-7zr3ndxo> <span class="timeline-track" aria-hidden="true" data-astro-cid-7zr3ndxo></span> <span class="timeline-progress" aria-hidden="true" data-astro-cid-7zr3ndxo></span> <ol class="relative ml-4 space-y-2" data-astro-cid-7zr3ndxo> ${WORK_EXPERIENCE.map((experience) => renderTemplate`<li class="timeline-item" data-timeline-item data-astro-cid-7zr3ndxo> ${renderComponent($$result, "ExperienceItem", $$ExperienceItem, { ...experience, "data-astro-cid-7zr3ndxo": true })} </li>`)} </ol> </div> </section> <section data-astro-cid-7zr3ndxo> ${renderComponent($$result, "Title", $$Title, { "color": "text-green", "class": "text-2xl md:text-3xl lg:text-4xl", "data-astro-cid-7zr3ndxo": true }, { "default": ($$result2) => renderTemplate` ${renderComponent($$result2, "Profile", $$Profile, { "class": "size-6 md:size-7", "data-astro-cid-7zr3ndxo": true })}
+Estudios
+` })} <div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2" data-astro-cid-7zr3ndxo> ${STUDIES.map((study) => renderTemplate`<div class="timeline-item is-visible" data-astro-cid-7zr3ndxo> ${renderComponent($$result, "ExperienceItem", $$ExperienceItem, { ...study, "showDot": false, "data-astro-cid-7zr3ndxo": true })} </div>`)} </div> </section> </div> ${renderScript($$result, "/home/lizdev/Escritorio/projects/portfolio/src/components/sections/WorkExperience.astro?astro&type=script&index=0&lang.ts")} `;
 }, "/home/lizdev/Escritorio/projects/portfolio/src/components/sections/WorkExperience.astro", void 0);
 
-const $$Astro$a = createAstro("https://angelcruzsanchez.com");
+const $$Astro$7 = createAstro("https://angelcruzsanchez.com");
 const $$Next = createComponent(($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro$a, $$props, $$slots);
+  const Astro2 = $$result.createAstro($$Astro$7, $$props, $$slots);
   Astro2.self = $$Next;
   return renderTemplate`${maybeRenderHead()}<svg width="20" height="20" viewBox="0 0 180 180"${spreadAttributes(Astro2.props)} fill="none" xmlns="http://www.w3.org/2000/svg"> <mask id="mask0_408_139" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="180" height="180"> <circle cx="90" cy="90" r="90" fill="black"></circle> </mask> <g mask="url(#mask0_408_139)"> <circle cx="90" cy="90" r="87" fill="black" stroke="white" stroke-width="6"></circle> <path d="M149.508 157.52L69.142 54H54V125.97H66.1136V69.3836L139.999 164.845C143.333 162.614 146.509 160.165 149.508 157.52Z" fill="url(#paint0_linear_408_139)"></path> <rect x="115" y="54" width="12" height="72" fill="url(#paint1_linear_408_139)"></rect> </g> <defs> <linearGradient id="paint0_linear_408_139" x1="109" y1="116.5" x2="144.5" y2="160.5" gradientUnits="userSpaceOnUse"> <stop stop-color="white"></stop> <stop offset="1" stop-color="white" stop-opacity="0"></stop> </linearGradient> <linearGradient id="paint1_linear_408_139" x1="121" y1="54" x2="120.799" y2="106.875" gradientUnits="userSpaceOnUse"> <stop stop-color="white"></stop> <stop offset="1" stop-color="white" stop-opacity="0"></stop> </linearGradient> </defs> </svg>`;
 }, "/home/lizdev/Escritorio/projects/portfolio/src/icons/Next.astro", void 0);
 
-const $$Astro$9 = createAstro("https://angelcruzsanchez.com");
+const $$Astro$6 = createAstro("https://angelcruzsanchez.com");
 const $$Component = createComponent(($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro$9, $$props, $$slots);
+  const Astro2 = $$result.createAstro($$Astro$6, $$props, $$slots);
   Astro2.self = $$Component;
   return renderTemplate`${maybeRenderHead()}<svg${spreadAttributes(Astro2.props)} viewBox="0 0 256 366" xmlns="http://www.w3.org/2000/svg" width="256" height="366" preserveAspectRatio="xMidYMid"><path fill="#fff" d="M182.022 9.147c2.982 3.702 4.502 8.697 7.543 18.687L256 246.074a276.467 276.467 0 0 0-79.426-26.891L133.318 73.008a5.63 5.63 0 0 0-10.802.017L79.784 219.11A276.453 276.453 0 0 0 0 246.04L66.76 27.783c3.051-9.972 4.577-14.959 7.559-18.654a24.541 24.541 0 0 1 9.946-7.358C88.67 0 93.885 0 104.314 0h47.683c10.443 0 15.664 0 20.074 1.774a24.545 24.545 0 0 1 9.95 7.373Z"></path><path fill="#FF5D01" d="M189.972 256.46c-10.952 9.364-32.812 15.751-57.992 15.751-30.904 0-56.807-9.621-63.68-22.56-2.458 7.415-3.009 15.903-3.009 21.324 0 0-1.619 26.623 16.898 45.14 0-9.615 7.795-17.41 17.41-17.41 16.48 0 16.46 14.378 16.446 26.043l-.001 1.041c0 17.705 10.82 32.883 26.21 39.28a35.685 35.685 0 0 1-3.588-15.647c0-16.886 9.913-23.173 21.435-30.48 9.167-5.814 19.353-12.274 26.372-25.232a47.588 47.588 0 0 0 5.742-22.735c0-5.06-.786-9.938-2.243-14.516Z"></path></svg>`;
 }, "/home/lizdev/Escritorio/projects/portfolio/src/icons/Astro.astro", void 0);
 
-const $$Astro$8 = createAstro("https://angelcruzsanchez.com");
+const $$Astro$5 = createAstro("https://angelcruzsanchez.com");
 const $$Tailwind = createComponent(($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro$8, $$props, $$slots);
+  const Astro2 = $$result.createAstro($$Astro$5, $$props, $$slots);
   Astro2.self = $$Tailwind;
   return renderTemplate`${maybeRenderHead()}<svg xmlns="http://www.w3.org/2000/svg"${spreadAttributes(Astro2.props)} fill="none" viewBox="0 0 54 33"><g clip-path="url(#a)"><path fill="#38bdf8" fill-rule="evenodd" d="M27 0c-7.2 0-11.7 3.6-13.5 10.8 2.7-3.6 5.85-4.95 9.45-4.05 2.054.513 3.522 2.004 5.147 3.653C30.744 13.09 33.808 16.2 40.5 16.2c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.513-3.522-2.004-5.147-3.653C36.756 3.11 33.692 0 27 0zM13.5 16.2C6.3 16.2 1.8 19.8 0 27c2.7-3.6 5.85-4.95 9.45-4.05 2.054.514 3.522 2.004 5.147 3.653C17.244 29.29 20.308 32.4 27 32.4c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.513-3.522-2.004-5.147-3.653C23.256 19.31 20.192 16.2 13.5 16.2z" clip-rule="evenodd"></path></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h54v32.4H0z"></path></clipPath></defs></svg>`;
 }, "/home/lizdev/Escritorio/projects/portfolio/src/icons/Tailwind.astro", void 0);
 
-const $$Astro$7 = createAstro("https://angelcruzsanchez.com");
+const $$Astro$4 = createAstro("https://angelcruzsanchez.com");
 const $$Mysql = createComponent(($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro$7, $$props, $$slots);
+  const Astro2 = $$result.createAstro($$Astro$4, $$props, $$slots);
   Astro2.self = $$Mysql;
   return renderTemplate`${maybeRenderHead()}<svg${spreadAttributes(Astro2.props)} xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" viewBox="0 0 256 252"> <path d="M236 194c-14 0-25 1-34 5-3 1-7 1-7 4l3 6c2 3 5 8 9 11l11 8 21 10 11 9 6 4-3-6-5-5c-5-7-11-13-18-18-6-3-18-9-20-15h-1l12-3 18-3 8-2v-2l-9-10c-8-8-18-15-28-22l-18-8c-2-1-6-2-7-4l-7-13-15-30-8-20c-18-30-38-48-68-65-6-4-14-5-22-7l-13-1-8-6C34 5 8-9 1 9c-5 11 7 22 11 28l9 13 3 9c3 8 5 17 9 24l6 10c2 2 4 3 5 6-3 4-3 9-4 13-7 20-4 44 5 59 2 4 9 14 18 10 8-3 6-13 8-22l1-4 8 14c5 9 14 18 22 24 4 3 8 8 13 10l-4-4-9-10c-8-10-14-21-20-32l-7-17-3-6c-3 4-7 7-9 12-3 7-3 17-4 26h-1c-6-1-8-7-10-12-5-12-6-32-1-46 1-4 6-15 4-19-1-3-4-5-6-7l-7-12-10-30-9-13c-3-5-7-8-10-14-1-2-2-5 0-7l2-2c2-2 9 0 11 1 6 3 12 5 17 9l8 6h4c6 1 12 0 17 2 9 3 18 7 25 12 23 14 42 35 54 59 3 4 3 8 5 12l12 26c4 8 7 16 12 23 3 4 14 6 18 8l12 4 18 12c2 2 11 7 12 10Z" fill="#00546B"></path> <path d="m58 43-7 1 6 7 4 9v-1c3-1 4-4 4-8l-2-4-5-4Z" fill="#00546B"></path> </svg>`;
 }, "/home/lizdev/Escritorio/projects/portfolio/src/icons/Mysql.astro", void 0);
 
-const $$Astro$6 = createAstro("https://angelcruzsanchez.com");
+const $$Astro$3 = createAstro("https://angelcruzsanchez.com");
 const $$Postgresql = createComponent(($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro$6, $$props, $$slots);
+  const Astro2 = $$result.createAstro($$Astro$3, $$props, $$slots);
   Astro2.self = $$Postgresql;
   return renderTemplate`${maybeRenderHead()}<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid"${spreadAttributes(Astro2.props)} viewBox="0 0 256 264"> <path d="M255 158c-2-5-6-8-11-9l-8 1-14 2c12-20 22-43 27-65 9-34 5-50-1-57a77 77 0 0 0-62-30c-14 0-27 3-33 5l-19-2c-12 0-24 3-33 8L78 5c-23-3-42 0-55 9C7 26-1 46 0 74a342 342 0 0 0 28 97c7 14 14 22 23 24 5 2 13 3 22-4l5 4 9 3c11 3 22 2 31-1a643 643 0 0 1 0 10 109 109 0 0 0 5 33c1 4 4 11 9 16 6 6 13 8 20 8l9-1c10-2 21-6 29-17s11-27 12-53v-2l1-2 1 1h1c10 0 22-2 30-6 5-2 24-12 20-26"></path> <path d="M238 161c-30 6-32-4-32-4 32-47 45-106 33-120-31-40-84-21-85-21l-20-2c-14 0-24 4-32 10 0 0-95-40-91 49 1 19 28 143 59 106l22-26c6 4 12 6 19 5h1v5c-8 9-6 10-22 14-16 3-7 9 0 11s25 4 36-12v2c3 2 5 16 5 29-1 12-1 21 2 27 2 7 5 22 26 18 17-4 27-14 28-30 1-12 3-10 3-20l1-5c2-16 1-21 12-19l2 1c8 0 19-2 25-5 13-6 21-16 8-13" fill="#336791"></path> <path d="M108 82h-6l-1 2 1 3c1 2 3 3 5 3h1c3 0 6-2 6-4 1-2-3-4-6-4M197 82c0-2-4-3-7-2-3 0-6 1-6 3 1 2 3 4 6 4h1l4-2 2-3" fill="#FFF"></path> <path d="M248 160c-1-3-5-5-11-3-18 3-24 1-27-1 14-21 26-47 32-71 3-11 5-22 5-30 0-10-2-17-5-21a70 70 0 0 0-57-27c-16 0-30 4-33 6-5-2-12-3-18-3-13 0-23 3-32 9-4-2-14-5-26-7-21-3-37-1-49 8C13 30 6 48 8 73c0 8 5 35 13 60 10 33 21 51 32 55l5 1c4 0 9-2 14-9l21-22c4 2 9 3 14 3v1l-2 3c-4 5-5 5-16 8-3 0-12 2-12 8 0 7 10 10 11 10l12 1c9 0 17-3 24-8-1 23 0 46 3 53 3 6 8 20 26 20l9-1c18-4 26-12 29-30l6-45 11 1c8 0 17-2 23-5 7-3 19-10 17-17Zm-44-83-1 10-2 12 1 14c1 9 3 19-2 28l-2-4-3-6c-7-12-22-39-14-50 2-3 8-6 23-4Zm-18-62c21 0 38 8 50 23 9 12-1 65-30 111l-1-1c7-13 6-25 5-36l-1-13 1-11a72 72 0 0 0 1-16c0-5-6-20-18-34-6-7-16-16-28-21l21-2ZM67 176c-6 7-10 6-12 5-8-3-19-21-27-51-8-25-13-50-13-57-1-23 4-39 16-47 20-14 52-6 64-2v1C74 46 74 82 74 85v3c1 7 2 18 0 31a38 38 0 0 0 12 34l-19 23Zm22-30c-6-7-9-16-8-26 2-14 1-26 1-32v-2c3-3 17-11 27-8 5 1 8 4 9 9 6 28 1 40-4 50l-2 5-1 2-3 10c-7 0-14-3-19-8Zm1 38-5-2 6-2c13-3 15-5 19-10l4-5c3-3 4-2 6-1 1 0 3 2 4 5l-1 4c-9 13-23 13-33 11Zm70 65c-16 3-22-5-26-15a293 293 0 0 1-3-67c-2-5-5-9-8-10-2-1-5-2-8-1l3-10 1-1 2-5c5-10 11-24 4-54-2-12-11-17-23-16a54 54 0 0 0-20 7c1-12 5-33 18-47 9-8 20-13 34-12 27 0 44 14 54 26 8 10 13 20 15 25-14-1-23 1-28 8-10 15 6 44 13 57l3 6 8 13 2 2c-4 2-11 4-11 18l-6 51c-3 16-8 21-24 25Zm68-78c-4 2-11 3-18 3-8 1-11 0-12-1-1-9 3-10 6-11h2l1 1c6 4 16 4 31 1h1l-11 7Z" fill="#FFF"></path> </svg>`;
 }, "/home/lizdev/Escritorio/projects/portfolio/src/icons/Postgresql.astro", void 0);
 
-const $$Astro$5 = createAstro("https://angelcruzsanchez.com");
+const $$Astro$2 = createAstro("https://angelcruzsanchez.com");
 const $$Work = createComponent(($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro$5, $$props, $$slots);
+  const Astro2 = $$result.createAstro($$Astro$2, $$props, $$slots);
   Astro2.self = $$Work;
   const TAGS = {
     NEXT: {
@@ -156,11 +187,6 @@ const $$Work = createComponent(($$result, $$props, $$slots) => {
       class: "bg-[#003159] text-white",
       icon: $$Tailwind
     },
-    ASTRO: {
-      name: "Astro",
-      class: "bg-black text-white",
-      icon: $$Component
-    },
     MYSQL: {
       name: "Mysql",
       class: "bg-white text-black",
@@ -168,28 +194,9 @@ const $$Work = createComponent(($$result, $$props, $$slots) => {
     }};
   const PROJECTS = [
     {
-      title: "Mind Your English",
-      description: "Sitio web institucional para esta academia de idiomas. Desarrollado para fortalecer su identidad digital y optimizar la captaci\xF3n de nuevos alumnos mediante una estructura clara de servicios y contacto directo.",
-      link: "https://mindyourenglish.academy",
-      github: "",
-      image: "/img/works/mindyourenglish.png",
-      // Asegúrate de tener esta imagen
-      tags: [TAGS.ASTRO, TAGS.TAILWIND]
-      // Ajusta los tags si usaste otras tecnologías
-    },
-    {
-      title: "Axolmen E-commerce",
-      description: "Plataforma de comercio electr\xF3nico completa desarrollada a medida. Incluye un panel de administraci\xF3n personalizado para la gesti\xF3n de inventario y pedidos en tiempo real, optimizada para SEO y conversi\xF3n.",
-      link: "https://axolmen.com",
-      // Corregí .con a .com (verifica si es correcto)
-      github: "",
-      image: "/img/works/axolmen.png",
-      tags: [TAGS.NEXT, TAGS.TAILWIND]
-    },
-    {
-      title: "Code Verse",
+      title: "Codeverse",
       description: "Sitio web corporativo de alto rendimiento para la startup tecnol\xF3gica Code Verse. Dise\xF1ado con un enfoque en UX moderno y optimizaci\xF3n de SEO para fortalecer la presencia digital de la marca.",
-      link: "https://codeverseinc.vercel.app",
+      link: "https://www.codeverse.com.mx/",
       github: "",
       image: "/img/works/codeverse.png",
       tags: [TAGS.NEXT, TAGS.TAILWIND]
@@ -214,20 +221,6 @@ const $$Work = createComponent(($$result, $$props, $$slots) => {
   })}`;
 }, "/home/lizdev/Escritorio/projects/portfolio/src/components/sections/Work.astro", void 0);
 
-const $$Astro$4 = createAstro("https://angelcruzsanchez.com");
-const $$Brifcase = createComponent(($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro$4, $$props, $$slots);
-  Astro2.self = $$Brifcase;
-  return renderTemplate`${maybeRenderHead()}<svg${spreadAttributes(Astro2.props.class)} xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-briefcase" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M3 7m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z"></path><path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2"></path><path d="M12 12l0 .01"></path><path d="M3 13a20 20 0 0 0 18 0"></path></svg>`;
-}, "/home/lizdev/Escritorio/projects/portfolio/src/icons/Brifcase.astro", void 0);
-
-const $$Astro$3 = createAstro("https://angelcruzsanchez.com");
-const $$Profile = createComponent(($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro$3, $$props, $$slots);
-  Astro2.self = $$Profile;
-  return renderTemplate`${maybeRenderHead()}<svg${spreadAttributes(Astro2.props)} xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path><path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path></svg>`;
-}, "/home/lizdev/Escritorio/projects/portfolio/src/icons/Profile.astro", void 0);
-
 const $$Footer = createComponent(($$result, $$props, $$slots) => {
   return renderTemplate`${maybeRenderHead()}<footer class="border-t border-dark-border/30 mt-20"> <div class="w-full text-center py-12"> <p class="text-sm text-gray-500">
 © 2024 <span class="text-gray-400 font-medium hover:text-blue transition-colors duration-300 cursor-pointer">Lizandro Antonio Santos</span> </p> </div> </footer>`;
@@ -235,14 +228,9 @@ const $$Footer = createComponent(($$result, $$props, $$slots) => {
 
 const $$AboutMe = createComponent(($$result, $$props, $$slots) => {
   return renderTemplate`${maybeRenderHead()}<article class="flex flex-col items-center justify-between gap-12 text-gray-300 md:flex-row mt-8 animate-fade-in-up"> <div class="[&>p]:mb-8 text-lg md:text-xl text-pretty text-gray-300 leading-[1.75] max-w-2xl"> <p class="mb-6">
-Hola, soy <span class="text-white font-semibold">Lizandro Antonio Santos</span>, un desarrollador apasionado que escribió sus primeras líneas de código a los <span class="text-blue font-semibold">13 años</span>.
-      Me considero un <span class="text-violet font-semibold">eterno autodidacta</span> y alguien que disfruta genuinamente conectando con las personas;
-      ya sea resolviendo un bug complejo o compartiendo puntos de vista.
+Mi primer acercamiento al mundo de la tecnología fue a los <span class="text-blue font-semibold">8 años</span>, cuando vi una laptop por primera vez y me invadió la curiosidad absoluta por entender cómo funcionaba por dentro; desde entonces, soy un <span class="text-violet font-semibold">eterno autodidacta</span> apasionado por construir soluciones robustas desde las entrañas del software.
 </p> <p>
-Cuando no estoy frente a la pantalla, me encontrarás en movimiento: el <span class="text-green font-semibold">gym</span>
-y la <span class="text-green font-semibold">danza folclórica</span> son mi forma de liberar energía,
-      aunque también tengo un lado artístico que cultivo tocando la <span class="text-violet font-semibold">guitarra</span>.
-      Busco disfrutar cada faceta de mi vida al máximo, aplicando la misma dedicación a mis proyectos de software que a mis pasiones personales.
+Cuando no estoy diseñando arquitecturas backend o levantando contenedores, me encontrarás en movimiento: el <span class="text-green font-semibold">gimnasio y correr</span> son mi forma de liberar energía, además de que <span class="text-violet font-semibold">leer</span> es un hábito que cultivo constantemente para mantener la mente afilada.
 </p> </div> <div class="order-1 md:order-2 relative group"> <div class="absolute inset-0 bg-gradient-to-br from-blue/20 to-violet/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div> ${renderComponent($$result, "Image", $$Image, { "src": "/yo.jpg", "alt": "Lizandro Antonio Santos", "width": 800, "height": 800, "class": "relative object-cover w-[400px] md:w-[650px] lg:w-[750px] aspect-square rounded-2xl border-2 border-dark-border/50 group-hover:border-blue/50 transition-all duration-500 group-hover:scale-105 group-hover:rotate-1 shadow-2xl shadow-black/40", "style": "object-position: 50% 50%" })} </div> </article>`;
 }, "/home/lizdev/Escritorio/projects/portfolio/src/components/sections/AboutMe.astro", void 0);
 
@@ -258,9 +246,9 @@ const $$Email = createComponent(($$result, $$props, $$slots) => {
   return renderTemplate`${maybeRenderHead()}<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail-share" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M13 19h-8a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v6"></path><path d="M3 7l9 6l9 -6"></path><path d="M16 22l5 -5"></path><path d="M21 21.5v-4.5h-4.5"></path></svg>`;
 }, "/home/lizdev/Escritorio/projects/portfolio/src/icons/Email.astro", void 0);
 
-const $$Astro$2 = createAstro("https://angelcruzsanchez.com");
+const $$Astro$1 = createAstro("https://angelcruzsanchez.com");
 const $$SocialPill = createComponent(($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro$2, $$props, $$slots);
+  const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
   Astro2.self = $$SocialPill;
   return renderTemplate`${maybeRenderHead()}<a target="_blank"${spreadAttributes(Astro2.props)} class="inline-flex items-center justify-center gap-1.5 md:gap-2 px-3 py-2 md:px-5 md:py-2.5 text-sm md:text-base
   text-gray-300 transition-all duration-300 bg-dark-surface/60 backdrop-blur-sm
@@ -274,10 +262,6 @@ const $$SocialPill = createComponent(($$result, $$props, $$slots) => {
   relative overflow-hidden"> <!-- Animación de borde brillante --> <span class="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"> <span class="absolute inset-0 rounded-full bg-gradient-to-r from-blue/20 via-violet/20 to-green/20 blur-sm animate-pulse"></span> <span class="absolute inset-[1px] rounded-full bg-gradient-to-r from-blue/30 via-violet/30 to-green/30 animate-[spin_3s_linear_infinite]"></span> </span> <!-- Fondo con gradiente al hover --> <span class="absolute inset-0 bg-gradient-to-r from-blue/10 via-violet/10 to-green/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full"></span> <span class="relative z-10 flex items-center gap-1.5 md:gap-2">${renderSlot($$result, $$slots["default"])}</span> </a>`;
 }, "/home/lizdev/Escritorio/projects/portfolio/src/components/ui/SocialPill.astro", void 0);
 
-const $$Donwload = createComponent(($$result, $$props, $$slots) => {
-  return renderTemplate`${maybeRenderHead()}<svg class="w-3.5 h-3.5 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20"> <path d="M14.707 7.793a1 1 0 0 0-1.414 0L11 10.086V1.5a1 1 0 0 0-2 0v8.586L6.707 7.793a1 1 0 1 0-1.414 1.414l4 4a1 1 0 0 0 1.416 0l4-4a1 1 0 0 0-.002-1.414Z"></path> <path d="M18 12h-2.55l-2.975 2.975a3.5 3.5 0 0 1-4.95 0L4.55 12H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2Zm-3 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path> </svg>`;
-}, "/home/lizdev/Escritorio/projects/portfolio/src/icons/Donwload.astro", void 0);
-
 const $$Badge = createComponent(($$result, $$props, $$slots) => {
   return renderTemplate`${maybeRenderHead()}<div class="flex items-center"> <span class="relative inline-flex overflow-hidden rounded-full p-[1.5px]"> <span class="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,rgba(182,209,97,0.8)_0%,rgba(44,203,243,0.4)_50%,rgba(182,209,97,0.8)_100%)]"></span> <div class="inline-flex items-center justify-center w-full px-4 py-1.5 text-sm font-medium text-green bg-dark-surface/90 backdrop-blur-sm rounded-full whitespace-nowrap border border-green/20"> <span class="relative flex items-center gap-2"> <span class="w-2 h-2 bg-green rounded-full animate-pulse"></span> ${renderSlot($$result, $$slots["default"])} </span> </div> </span> </div>`;
 }, "/home/lizdev/Escritorio/projects/portfolio/src/components/ui/Badge.astro", void 0);
@@ -286,9 +270,9 @@ const icons = {"mdi":{"prefix":"mdi","icons":{"ab-testing":{"body":"<path fill=\
 
 const cache = /* @__PURE__ */ new WeakMap();
 
-const $$Astro$1 = createAstro("https://angelcruzsanchez.com");
+const $$Astro = createAstro("https://angelcruzsanchez.com");
 const $$Icon = createComponent(($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
+  const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$Icon;
   class AstroIconError extends Error {
     constructor(message) {
@@ -352,35 +336,26 @@ Hola, mi nombre es
 </p> <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.1] animate-fade-in-up" style="animation-delay: 0.3s;"> <span class="text-white">Lizandro Antonio </span> <span class="bg-gradient-to-r from-blue to-green bg-clip-text text-transparent">
 Santos
 </span> </h1> </div> <!-- Título profesional --> <div class="space-y-3 animate-fade-in-up" style="animation-delay: 0.4s;"> <h2 class="text-2xl md:text-4xl font-bold text-gray-300">
-Desarrollador Frontend
+Backend &amp; Cloud Engineer
 </h2> <p class="text-lg md:text-xl text-gray-300 leading-[1.8] max-w-2xl">
-Especializado en <strong class="text-blue font-semibold">React</strong> con enfoque en <strong class="text-violet font-semibold">Clean Architecture</strong> y buenas prácticas. 
-          Cuento con experiencia en Backend con <strong class="text-green font-semibold">NestJS/Express</strong> para APIs escalables.
-</p> </div> <!-- Información adicional --> <div class="flex flex-wrap items-center gap-6 text-gray-300 animate-fade-in" style="animation-delay: 0.5s;"> <div class="flex items-center gap-2"> ${renderComponent($$result, "Icon", $$Icon, { "name": "mdi:map-marker", "width": 18, "height": 18, "class": "text-blue" })} <span>Toluca, México</span> </div> <div class="flex items-center gap-2"> ${renderComponent($$result, "Icon", $$Icon, { "name": "mdi:school", "width": 18, "height": 18, "class": "text-green" })} <span>Ing. Sistemas Computacionales</span> </div> <div class="flex items-center gap-2"> ${renderComponent($$result, "Icon", $$Icon, { "name": "mdi:briefcase", "width": 18, "height": 18, "class": "text-violet" })} <span>+3 años de experiencia</span> </div> </div> <!-- Redes sociales --> <div class="flex flex-wrap gap-2 md:gap-4 pt-4 animate-fade-in" style="animation-delay: 0.6s;"> ${renderComponent($$result, "SocialPill", $$SocialPill, { "href": "https://github.com/angelcruz07" }, { "default": ($$result2) => renderTemplate` ${renderComponent($$result2, "GitHub", $$GitHub, {})}
+Especializado en <strong class="text-blue font-semibold">NestJS, TypeScript, Docker y Python</strong>. Apasionado por la <strong class="text-violet font-semibold">arquitectura limpia</strong>, la ingeniería de sistemas escalables y el desarrollo impulsado por especificaciones.
+</p> </div> <!-- Información adicional --> <div class="flex flex-wrap items-center gap-6 text-gray-300 animate-fade-in" style="animation-delay: 0.5s;"> <div class="flex items-center gap-2"> ${renderComponent($$result, "Icon", $$Icon, { "name": "mdi:map-marker", "width": 18, "height": 18, "class": "text-blue" })} <span>Ciudad de México, México</span> </div> <div class="flex items-center gap-2"> ${renderComponent($$result, "Icon", $$Icon, { "name": "mdi:school", "width": 18, "height": 18, "class": "text-green" })} <span>Ing. de Software Multiplataforma</span> </div> <div class="flex items-center gap-2"> ${renderComponent($$result, "Icon", $$Icon, { "name": "mdi:briefcase", "width": 18, "height": 18, "class": "text-violet" })} <span>Backend &amp; Cloud Engineer en The Cloud Mastery</span> </div> </div> <!-- Redes sociales --> <div class="flex flex-wrap gap-2 md:gap-4 pt-4 animate-fade-in" style="animation-delay: 0.6s;"> ${renderComponent($$result, "SocialPill", $$SocialPill, { "href": "https://github.com/LizandroBackEnd" }, { "default": ($$result2) => renderTemplate` ${renderComponent($$result2, "GitHub", $$GitHub, {})}
 GitHub
-` })} ${renderComponent($$result, "SocialPill", $$SocialPill, { "href": "https://www.linkedin.com/in/angelcruzsanchez" }, { "default": ($$result2) => renderTemplate` ${renderComponent($$result2, "LinkedIn", $$LinkIn, {})}
+` })} ${renderComponent($$result, "SocialPill", $$SocialPill, { "href": "https://www.linkedin.com/in/lizandroantoniosantos" }, { "default": ($$result2) => renderTemplate` ${renderComponent($$result2, "LinkedIn", $$LinkIn, {})}
 LinkedIn
-` })} ${renderComponent($$result, "SocialPill", $$SocialPill, { "href": "mailto:angelcruzsanchez126@gmail.com" }, { "default": ($$result2) => renderTemplate` ${renderComponent($$result2, "Email", $$Email, {})}
+` })} ${renderComponent($$result, "SocialPill", $$SocialPill, { "href": "mailto:codeversebackend@gmail.com" }, { "default": ($$result2) => renderTemplate` ${renderComponent($$result2, "Email", $$Email, {})}
 Contactar
-` })} ${renderComponent($$result, "SocialPill", $$SocialPill, { "href": "https://drive.google.com/file/d/1pRfPQxEf3CNWgmEw991yAmlNwYsbyJmr/view?usp=sharing" }, { "default": ($$result2) => renderTemplate` ${renderComponent($$result2, "Download", $$Donwload, {})}
-Descargar CV
-` })} </div> </div> <!-- Columna derecha: Imagen de perfil --> <div class="flex-shrink-0 animate-fade-in" style="animation-delay: 0.4s;"> <div class="relative group"> <!-- Efecto de brillo animado --> <div class="absolute -inset-4 bg-gradient-to-r from-blue/20 via-violet/20 to-green/20 rounded-full blur-2xl group-hover:blur-3xl transition-all duration-700 animate-pulse"></div> <!-- Imagen con borde animado --> <div class="relative"> ${renderComponent($$result, "Image", $$Image, { "src": "/yo.jpg", "alt": "Lizandro Antonio Santos, desarrollador web", "height": 200, "width": 200, "class": "relative w-[200px] h-[200px] rounded-full border-2 border-dark-border/50 shadow-2xl shadow-black/50 group-hover:border-blue/50 transition-all duration-500 group-hover:scale-105 object-cover aspect-square" })} <!-- Indicador de estado --> <div class="absolute bottom-0 right-8 w-6 h-6 bg-green rounded-full border-4 border-dark-bg shadow-lg animate-pulse"> <div class="w-full h-full bg-green rounded-full animate-ping opacity-75"></div> </div> </div> </div> </div> </section> <!-- Cita inspiracional --> <div class="relative animate-fade-in mt-5 md:mt-10" style="animation-delay: 0.7s;"> <div class="relative p-8 md:p-10 rounded-3xl bg-gradient-to-br from-dark-surface/60 via-dark-surface/40 to-dark-surface/60 border border-dark-border/50 backdrop-blur-xl overflow-hidden"> <!-- Efecto de fondo --> <div class="absolute inset-0 bg-gradient-to-r from-blue/5 via-transparent to-violet/5"></div> <div class="relative z-10 text-center"> ${renderComponent($$result, "Icon", $$Icon, { "name": "mdi:format-quote-open", "width": 40, "height": 40, "class": "mx-auto mb-4 text-blue/30" })} <p class="text-xl md:text-2xl font-medium text-gray-200 italic mb-3 max-w-3xl mx-auto leading-[1.7]">
-"A clean programmer is the best kind of programmer"
-</p> <p class="text-sm text-gray-500">— Alan Buscaglia</p> </div> </div> </div> </div>`;
+` })} <!-- CV pendiente de agregar --> </div> </div> <!-- Columna derecha: Imagen de perfil --> <div class="flex-shrink-0 animate-fade-in" style="animation-delay: 0.4s;"> <div class="relative group"> <!-- Efecto de brillo animado --> <div class="absolute -inset-4 bg-gradient-to-r from-blue/20 via-violet/20 to-green/20 rounded-full blur-2xl group-hover:blur-3xl transition-all duration-700 animate-pulse"></div> <!-- Imagen con borde animado --> <div class="relative"> ${renderComponent($$result, "Image", $$Image, { "src": "/yo.jpg", "alt": "Lizandro Antonio Santos, desarrollador web", "height": 200, "width": 200, "class": "relative w-[200px] h-[200px] rounded-full border-2 border-dark-border/50 shadow-2xl shadow-black/50 group-hover:border-blue/50 transition-all duration-500 group-hover:scale-105 object-cover aspect-square" })} <!-- Indicador de estado --> <div class="absolute bottom-0 right-8 w-6 h-6 bg-green rounded-full border-4 border-dark-bg shadow-lg animate-pulse"> <div class="w-full h-full bg-green rounded-full animate-ping opacity-75"></div> </div> </div> </div> </div> </section> <!-- Cita inspiracional --> <div class="relative animate-fade-in mt-5 md:mt-10" style="animation-delay: 0.7s;"> <div class="relative p-8 md:p-10 rounded-3xl bg-gradient-to-br from-dark-surface/60 via-dark-surface/40 to-dark-surface/60 border border-dark-border/50 backdrop-blur-xl overflow-hidden"> <!-- Efecto de fondo --> <div class="absolute inset-0 bg-gradient-to-r from-blue/5 via-transparent to-violet/5"></div> <div class="relative z-10 text-center"> ${renderComponent($$result, "Icon", $$Icon, { "name": "mdi:format-quote-open", "width": 40, "height": 40, "class": "mx-auto mb-4 text-blue/30" })} <p class="text-xl md:text-2xl font-medium text-gray-200 italic mb-3 max-w-3xl mx-auto leading-[1.7]">
+"Soy el programador elegido por Dios. Él me ha dotado de un intelecto divino... No tiene código que yo no haya escrito."
+</p> <p class="text-sm text-gray-500">— Terry David</p> </div> </div> </div> </div>`;
 }, "/home/lizdev/Escritorio/projects/portfolio/src/components/sections/Hero.astro", void 0);
 
-const $$Astro = createAstro("https://angelcruzsanchez.com");
-const $$Title = createComponent(($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
-  Astro2.self = $$Title;
-  const { color } = Astro2.props;
-  return renderTemplate`${maybeRenderHead()}<h2${addAttribute(`${color} text-3xl md:text-4xl lg:text-5xl font-bold md:mb-8 mt-8 first:mt-0 flex flex-col md:flex-row gap-4 md:gap-6 items-start md:items-center group`, "class")}> <span class="flex items-center gap-3 flex-shrink-0"> ${renderSlot($$result, $$slots["default"])} </span> <div class="flex-1 w-full md:w-auto h-px bg-gradient-to-r from-dark-border via-dark-border/50 to-transparent mt-2 md:mt-0 md:ml-6"></div> </h2>`;
-}, "/home/lizdev/Escritorio/projects/portfolio/src/components/ui/Title .astro", void 0);
-
 const $$Index = createComponent(($$result, $$props, $$slots) => {
-  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Portafolio Lizandro Antonio Santos - Desarrollador Web", "description": "Contratame para crear tu web o potenciar tu negocio" }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<main class="px-6 md:px-10 lg:px-16 max-w-7xl mx-auto"> <!-- Hero Section --> ${renderComponent($$result2, "SectionContainer", $$SectionContainer, { "class": "pt-10 md:mt-20 mt-10 md:py-20" }, { "default": ($$result3) => renderTemplate` ${renderComponent($$result3, "Hero", $$Hero, {})} ` })} <!-- Experiencia Section --> ${renderComponent($$result2, "SectionContainer", $$SectionContainer, { "id": "experiencia", "class": "mt-40 mb-24" }, { "default": ($$result3) => renderTemplate` ${renderComponent($$result3, "Title", $$Title, { "color": "text-violet" }, { "default": ($$result4) => renderTemplate` ${renderComponent($$result4, "Brifcase", $$Brifcase, { "class": "size-6 md:size-7" })}
-Experiencia profesional
-` })} ${renderComponent($$result3, "WorkExperience", $$WorkExperience, {})} ` })} <!-- Proyectos Section --> ${renderComponent($$result2, "SectionContainer", $$SectionContainer, { "id": "proyectos", "class": "mt-40 mb-24" }, { "default": ($$result3) => renderTemplate` ${renderComponent($$result3, "Title", $$Title, { "color": "text-green" }, { "default": ($$result4) => renderTemplate` ${renderComponent($$result4, "Brifcase", $$Brifcase, { "class": "size-6 md:size-7" })}
+  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Portafolio Lizandro Antonio Santos - Desarrollador Web", "description": "Contratame para crear tu web o potenciar tu negocio" }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<main class="px-6 md:px-10 lg:px-16 max-w-7xl mx-auto"> <!-- Hero Section --> ${renderComponent($$result2, "SectionContainer", $$SectionContainer, { "class": "pt-10 md:mt-20 mt-10 md:py-20" }, { "default": ($$result3) => renderTemplate` ${renderComponent($$result3, "Hero", $$Hero, {})} ` })} <!-- Certificaciones Section - pendiente de activar --> <!--
+    <SectionContainer class="mt-24 mb-24">
+      <Certifications />
+    </SectionContainer>
+    --> <!-- Experiencia Section --> ${renderComponent($$result2, "SectionContainer", $$SectionContainer, { "id": "experiencia", "class": "mt-40 mb-24" }, { "default": ($$result3) => renderTemplate` ${renderComponent($$result3, "WorkExperience", $$WorkExperience, {})} ` })} <!-- Proyectos Section --> ${renderComponent($$result2, "SectionContainer", $$SectionContainer, { "id": "proyectos", "class": "mt-40 mb-24" }, { "default": ($$result3) => renderTemplate` ${renderComponent($$result3, "Title", $$Title, { "color": "text-green" }, { "default": ($$result4) => renderTemplate` ${renderComponent($$result4, "Brifcase", $$Brifcase, { "class": "size-6 md:size-7" })}
 Últimos trabajos
 ` })} <div class="flex flex-row mt-16 gap-8 flex-wrap justify-center md:justify-start"> ${renderComponent($$result3, "Works", $$Work, {})} </div>  ` })} <!-- Sobre Mi Section --> ${renderComponent($$result2, "SectionContainer", $$SectionContainer, { "id": "sobre-mi", "class": "mt-40 mb-24" }, { "default": ($$result3) => renderTemplate` ${renderComponent($$result3, "Title", $$Title, { "color": "text-blue" }, { "default": ($$result4) => renderTemplate` ${renderComponent($$result4, "Profile", $$Profile, { "class": "size-6 md:size-7" })}
 Sobre mi
